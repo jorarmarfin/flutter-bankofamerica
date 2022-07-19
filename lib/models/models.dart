@@ -1,0 +1,1 @@
+export 'package:flutter_banckofamerica/models/bank_model.dart';
