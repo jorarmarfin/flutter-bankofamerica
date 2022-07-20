@@ -12,6 +12,8 @@ class BankProvider extends ChangeNotifier {
   List<BankModel> listaBancos = [];
   late BankModel bancoSeleccionado;
 
+ 
+
   Future<List<BankModel>> getListBanks(String coordenadas) async {
     var url = Uri.https(_baseUrl, '/api/find-banks/3/$coordenadas');
     final response = await http.get(url);

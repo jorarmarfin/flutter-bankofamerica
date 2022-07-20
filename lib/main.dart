@@ -4,8 +4,11 @@ import 'package:flutter_banckofamerica/screens/screens.dart';
 import 'package:flutter_banckofamerica/themes/default_theme.dart';
 
 import 'package:provider/provider.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   runApp(const AppState());
 }
 
@@ -24,6 +27,10 @@ class AppState extends StatelessWidget {
           lazy: false,
           create: (_) => GeolocationProvider(),
         ),
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (_) => UtilsProvider(),
+        ),
       ],
       child: const MyApp(),
     );
@@ -39,9 +46,9 @@ class MyApp extends StatelessWidget {
       title: 'BankOfAmerica',
       initialRoute: HomeScreen.routerName,
       routes: {
-        HomeScreen.routerName: (context) => const HomeScreen(),
+        HomeScreen.routerName: (context) => HomeScreen(),
         MapaScreen.routerName: (context) => const MapaScreen(),
-        ListadoScreen.routerName: (context) => const ListadoScreen(),
+        ListadoScreen.routerName: (context) =>  ListadoScreen(),
         DetalleScreen.routerName: (context) => const DetalleScreen(),
       },
       theme: DefaultTheme.base,

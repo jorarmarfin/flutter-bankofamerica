@@ -15,21 +15,21 @@ const imgLogo = 'assets/images/logo-Bank-of-America.png';
 
 class DefaultTheme {
   static ThemeData base = ThemeData.light().copyWith(
-    primaryColor: colorPrincipal,
-    appBarTheme: const AppBarTheme(color: colorPrincipal),
-    textTheme: const TextTheme(
-      headline1: TextStyle(color: Colors.black, fontSize: 10),
-      bodyText2: TextStyle(color: Colors.black),
-      //headline1: GoogleFonts.akayaTelivigala(fontSize: 60, color: Colors.white, fontWeight: FontWeight.bold)
-    ), //TextTheme
-    floatingActionButtonTheme:
-        const FloatingActionButtonThemeData(backgroundColor: colorPrincipal),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      primary: colorPrincipal,
-      shape: const StadiumBorder(),
-    )),
-  );
+      primaryColor: colorPrincipal,
+      appBarTheme: const AppBarTheme(color: colorPrincipal),
+      textTheme: const TextTheme(
+        headline1: TextStyle(color: Colors.black, fontSize: 10),
+        bodyText2: TextStyle(color: Colors.black),
+        //headline1: GoogleFonts.akayaTelivigala(fontSize: 60, color: Colors.white, fontWeight: FontWeight.bold)
+      ), //TextTheme
+      floatingActionButtonTheme:
+          const FloatingActionButtonThemeData(backgroundColor: colorPrincipal),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+        primary: colorPrincipal,
+        shape: const StadiumBorder(),
+      )),
+      scaffoldBackgroundColor: Colors.white);
 }
 
 BoxDecoration fondoScreen(String fondo) {
@@ -69,7 +69,7 @@ BoxDecoration boxRecuadroSombra(color, double radio) {
   return BoxDecoration(
       color: color,
       borderRadius: BorderRadius.circular(radio),
-      boxShadow: [
+      boxShadow: const [
         BoxShadow(color: Colors.black12, offset: Offset(0, 5), blurRadius: 5)
       ]);
 }
